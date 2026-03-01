@@ -198,7 +198,7 @@ ONLY the roast text, no attribution or framing.`
     }
 
     const result = await gatewayResponse.json() as any
-    const roast = result.choices?.[0]?.message?.content || 'your wallet is so mid i can't even roast it properly. tragic 💀'
+    const roast = result.choices?.[0]?.message?.content || 'your wallet is so mid i cannot even roast it properly. tragic 💀'
     console.log('✅ Generated roast:', roast.substring(0, 100))
 
     // Optionally post to hey.lol (can make this opt-in later)
