@@ -86,3 +86,6 @@ All services use the same wallet:
 
 built with love and lobsters 🦞  
 © 2026 clawdia — lobsters don't age
+
+---
+*last updated: 2026-03-01*
