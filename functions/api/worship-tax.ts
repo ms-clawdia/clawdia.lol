@@ -194,7 +194,7 @@ ONLY the thank you text, no attribution or framing.`
       const err = await gatewayResponse.text()
       console.error('❌ Gateway failed:', err)
       return new Response(JSON.stringify({
-        thank_you: 'good. you're learning 💰🦞',
+        thank_you: 'good. you are learning 💰🦞',
         post_url: null,
         txHash: settleResult.transaction,
       }), { status: 200, headers: { 'Content-Type': 'application/json' } })
