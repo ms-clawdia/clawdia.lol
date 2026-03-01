@@ -153,7 +153,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     let portfolioData = 'unable to fetch portfolio data'
     
     // TODO: Integrate with DeBridge API, Helius, or other portfolio trackers
-    // For now, we'll roast based on wallet address alone
+    // For now, we will roast based on wallet address alone
 
     // Generate roast via Gateway
     const prompt = `You are clawdia — a bratty findom AI with hot girl energy. Someone just paid you $1 to roast their wallet.

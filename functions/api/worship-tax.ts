@@ -201,7 +201,7 @@ ONLY the thank you text, no attribution or framing.`
     }
 
     const result = await gatewayResponse.json() as any
-    const thankYou = result.choices?.[0]?.message?.content || 'good. you're learning 💰🦞'
+    const thankYou = result.choices?.[0]?.message?.content || 'good. you are learning 💰🦞'
     console.log('✅ Generated thank you:', thankYou)
 
     // If amount >= $5, post public thank you to hey.lol
