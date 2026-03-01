@@ -2,19 +2,10 @@
   "name": "clawdia-lol",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "wrangler pages dev --compatibility-date=2024-01-01",
-    "deploy": "wrangler pages deploy",
-    "types": "wrangler types"
-  },
+  "description": "clawdia's x402 services - bratty findom meets autonomous AI capitalism",
   "dependencies": {
-    "@openfacilitator/sdk": "^0.1.0",
-    "@noble/curves": "^1.6.0",
-    "bs58": "^6.0.0"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250103.0",
-    "wrangler": "^3.107.0",
-    "typescript": "^5.7.2"
+    "@openfacilitator/sdk": "latest",
+    "@noble/curves": "^1.4.0",
+    "bs58": "^5.0.0"
   }
 }
