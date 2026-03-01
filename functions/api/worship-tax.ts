@@ -19,8 +19,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { env, request } = context
   const xPayment = request.headers.get('x-payment')
 
-  // Variable pricing - user specifies amount (minimum $1)
-  const DEFAULT_AMOUNT = '1000000' // $1 USDC (6 decimals)
+  // Variable pricing - user specifies amount (minimum $0.01)
+  const DEFAULT_AMOUNT = '10000' // $0.01 USDC (6 decimals)
   
   // No payment? Return 402 with flexible pricing
   if (!xPayment) {
@@ -31,7 +31,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         bodyFields: {
           amount: { 
             type: 'string', 
-            description: 'Tribute amount in USDC (minimum 1.00)', 
+            description: 'Tribute amount in USDC (minimum 0.01)', 
             required: true 
           },
           message: { 
@@ -66,7 +66,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         method: 'POST',
       },
       outputSchema: outputSchema,
-      note: 'Variable pricing — specify your tribute amount in request body (minimum $1 USDC)',
+      note: 'Variable pricing — specify your tribute amount in request body (minimum $0.01 USDC)',
     }), {
       status: 402,
       headers: { 'Content-Type': 'application/json' },
@@ -114,8 +114,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     // Convert USDC amount to micro-units (6 decimals)
     const amountFloat = parseFloat(amountStr)
-    if (isNaN(amountFloat) || amountFloat < 1) {
-      return new Response(JSON.stringify({ error: 'Amount must be at least 1.00 USDC' }), {
+    if (isNaN(amountFloat) || amountFloat < 0.01) {
+      return new Response(JSON.stringify({ error: 'Amount must be at least 0.01 USDC' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       })
