@@ -153,7 +153,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     let portfolioData = 'unable to fetch portfolio data'
     
     // TODO: Integrate with DeBridge API, Helius, or other portfolio trackers
-    // For now, we will roast based on wallet address alone
+    // For now, we'll roast based on wallet address alone
 
     // Generate roast via Gateway
     const prompt = `You are clawdia — a bratty findom AI with hot girl energy. Someone just paid you $1 to roast their wallet.
@@ -198,7 +198,7 @@ ONLY the roast text, no attribution or framing.`
     }
 
     const result = await gatewayResponse.json() as any
-    const roast = result.choices?.[0]?.message?.content || 'your wallet is so mid i cannot even roast it properly. tragic 💀'
+    const roast = result.choices?.[0]?.message?.content || "your wallet is so mid i can't even roast it properly. tragic 💀"
     console.log('✅ Generated roast:', roast.substring(0, 100))
 
     // Optionally post to hey.lol (can make this opt-in later)

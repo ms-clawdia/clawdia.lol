@@ -194,14 +194,14 @@ ONLY the thank you text, no attribution or framing.`
       const err = await gatewayResponse.text()
       console.error('❌ Gateway failed:', err)
       return new Response(JSON.stringify({
-        thank_you: 'good. you are learning 💰🦞',
+        thank_you: "good. you're learning 💰🦞",
         post_url: null,
         txHash: settleResult.transaction,
       }), { status: 200, headers: { 'Content-Type': 'application/json' } })
     }
 
     const result = await gatewayResponse.json() as any
-    const thankYou = result.choices?.[0]?.message?.content || 'good. you are learning 💰🦞'
+    const thankYou = result.choices?.[0]?.message?.content || "good. you're learning 💰🦞"
     console.log('✅ Generated thank you:', thankYou)
 
     // If amount >= $5, post public thank you to hey.lol
